@@ -1,0 +1,31 @@
+const products = [
+  {
+    name: "Футболка",
+    price: "1200 ₽",
+    image: "https://via.placeholder.com/200x150?text=T-Shirt"
+  },
+  {
+    name: "Кепка",
+    price: "700 ₽",
+    image: "https://via.placeholder.com/200x150?text=Cap"
+  },
+  {
+    name: "Куртка",
+    price: "3000 ₽",
+    image: "https://via.placeholder.com/200x150?text=Jacket"
+  }
+];
+
+const container = document.getElementById("products");
+
+products.forEach(product => {
+  const div = document.createElement("div");
+  div.className = "product";
+  div.innerHTML = 
+    <img src="${product.image}" alt="${product.name}" />
+    <h3>${product.name}</h3>
+    <p>${product.price}</p>
+    <button>Купить</button>
+  ;
+  container.appendChild(div);
+});
